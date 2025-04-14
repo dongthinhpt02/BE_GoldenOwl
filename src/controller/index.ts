@@ -5,10 +5,6 @@ import { t } from 'elysia';
 
 export const studentController = (app: Elysia) => {
     // Serve static files from the 'public' directory
-    app.use(staticPlugin({
-        assets: 'public',
-        prefix: '/'
-    }));
 
     app.get('/score/:sbd', async ({ params }: { params: { sbd: string } }) => {
         const result = await findAllScoresBySBD(params.sbd);
